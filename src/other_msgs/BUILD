@@ -9,4 +9,5 @@ generate_messages(
         "//src/hello_msgs:msgs",
         "@std_msgs//:msgs",
     ],
+    visibility = ["//visibility:public"],
 )

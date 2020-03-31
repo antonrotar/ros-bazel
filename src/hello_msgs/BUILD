@@ -8,4 +8,5 @@ generate_messages(
     deps = [
         "@std_msgs//:msgs",
     ],
+    visibility = ["//visibility:public"],
 )

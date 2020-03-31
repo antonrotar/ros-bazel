@@ -214,7 +214,7 @@ _gencpp = rule(
 #
 #
 
-def generate_messages(srcs, ros_package_name, deps = []):
+def generate_messages(srcs, ros_package_name, deps = [], visibility = ["//visibility:private"]):
     # This target is used to collect transitive message dependencies
     # and track their include paths for genmsg.
     _msg_sources(
@@ -222,6 +222,7 @@ def generate_messages(srcs, ros_package_name, deps = []):
         srcs = srcs,
         ros_package_name = ros_package_name,
         deps = deps,
+        visibility = visibility,
     )
 
     genpy_outs = _genmsg_outs(srcs, ros_package_name, ".py")
@@ -242,6 +243,7 @@ def generate_messages(srcs, ros_package_name, deps = []):
         deps = [
             "@genpy_repo//:genpy",
         ],
+        visibility = visibility,
     )
 
     _gencpp(
@@ -260,4 +262,5 @@ def generate_messages(srcs, ros_package_name, deps = []):
             dep.replace(":msgs", ":msgs_cc")
             for dep in deps
         ],
+        visibility = visibility,
     )

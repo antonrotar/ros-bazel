@@ -8,7 +8,6 @@ load("@ros_bazel//bazel:path_utils.bzl", "basename", "dirname", "join_paths")
 RosMsgProvider = provider(fields = [
     "info",
     "deps",
-    "srcs",
 ])
 
 def _msg_sources_impl(ctx):

@@ -16,5 +16,6 @@ py_binary(
     ],
     deps = [
         "//src/other_msgs:msgs_py",
+        "@ros_python_utils_repo//:ros_python_utils",
     ],
 )

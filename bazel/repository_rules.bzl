@@ -58,3 +58,9 @@ def code_generation_repositories():
         strip_prefix = "gencpp-0.5.5",
         urls = ["https://github.com/ros/gencpp/archive/0.5.5.tar.gz"],
     )
+
+    native.new_local_repository(
+        name = "ros_python_utils_repo",
+        build_file = "@ros_bazel//bazel:ros_python_utils.BUILD",
+        path = "/opt/ros/melodic/lib/python2.7/dist-packages",
+    )

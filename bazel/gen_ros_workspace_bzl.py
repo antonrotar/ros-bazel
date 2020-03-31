@@ -79,7 +79,7 @@ def parse_cmake_config_file(fp, ros_path):
 
     if message_files:
         build_file_contents += """
-load("@//bazel:message_generation.bzl", "generate_messages")
+load("@ros_bazel//bazel:message_generation.bzl", "generate_messages")
 """
 
     build_file_contents += """

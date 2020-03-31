@@ -1,4 +1,4 @@
-load("@//bazel:message_generation.bzl", "generate_messages")
+load("@ros_bazel//bazel:message_generation.bzl", "generate_messages")
 
 generate_messages(
     srcs = glob([

@@ -242,6 +242,10 @@ def generate_messages(srcs, ros_package_name, deps = [], visibility = ["//visibi
         imports = ["."],
         deps = [
             "@genpy_repo//:genpy",
+        ] + [
+            dep.replace(":msgs", ":msgs_py")
+            for dep in deps
+            if not dep == "@std_msgs//:msgs"
         ],
         visibility = visibility,
     )
